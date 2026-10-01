@@ -14,15 +14,17 @@
   h1 { font-size: clamp(34px, 7vw, 52px); line-height: 1.05; margin: 0 0 10px; letter-spacing: -.01em; }
   .lede { color: var(--muted); margin: 0 0 36px; max-width: 34em; }
   .games { display: grid; gap: 16px; }
-  .game { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
-  .game img { width: 96px; height: 96px; border-radius: 22px; display: block; }
+  .game { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .game .banner { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; object-fit: cover; background: #0b0a1c; }
+  .game .info { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; padding: 18px; }
+  .game .icon { width: 96px; height: 96px; border-radius: 22px; display: block; }
   .game h2 { font-size: 21px; margin: 0; }
   .game .sub { color: var(--accent); font-weight: 600; font-size: 14px; margin: 2px 0 6px; }
   .game p { margin: 0; color: var(--muted); font-size: 15.5px; }
   .soon { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
   footer { max-width: 820px; margin: 0 auto; padding: 20px 16px 48px; color: var(--muted); font-size: 14.5px; display: flex; flex-wrap: wrap; gap: 8px 22px; border-top: 1px solid var(--line); }
   a { color: var(--link); }
-  @media (max-width: 460px) { .game { grid-template-columns: 72px 1fr; gap: 14px; } .game img { width: 72px; height: 72px; border-radius: 17px; } }
+  @media (max-width: 460px) { .game .info { grid-template-columns: 72px 1fr; gap: 14px; padding: 14px; } .game .icon { width: 72px; height: 72px; border-radius: 17px; } }
 </style>
 </head>
 <body>
@@ -32,28 +34,40 @@
   never help anyone win.</p>
   <div class="games">
     <section class="game">
-      <img src="images/magpie.png" alt="Magpie Peaks icon" width="96" height="96">
+      <img class="banner" src="images/magpie-banner.jpg" alt="" width="1600" height="781">
+      <div class="info">
+      <img class="icon" src="images/magpie.png" alt="Magpie Peaks icon" width="96" height="96">
       <div><h2>Magpie Peaks</h2><div class="sub">Solitaire climb</div>
         <p>Chain cards into streaks, collect trinkets and beat the seven Omens of the old magpie rhyme.</p>
         <span class="soon">Coming soon to Google Play</span></div>
+      </div>
     </section>
     <section class="game">
-      <img src="images/boom.png" alt="Boom Bloom icon" width="96" height="96">
+      <img class="banner" src="images/boom-banner.jpg" alt="" width="1600" height="781" loading="lazy">
+      <div class="info">
+      <img class="icon" src="images/boom.png" alt="Boom Bloom icon" width="96" height="96">
       <div><h2>Boom Bloom</h2><div class="sub">Firework puzzle</div>
         <p>Send rockets to the right mortars and paint pictures in the festival sky, across 150 shows.</p>
         <span class="soon">Coming soon to Google Play</span></div>
+      </div>
     </section>
     <section class="game">
-      <img src="images/tidewarden.png" alt="Tidewarden icon" width="96" height="96">
+      <img class="banner" src="images/tidewarden-banner.jpg" alt="" width="1600" height="781" loading="lazy">
+      <div class="info">
+      <img class="icon" src="images/tidewarden.png" alt="Tidewarden icon" width="96" height="96">
       <div><h2>Tidewarden</h2><div class="sub">Lighthouse keeper</div>
         <p>Aim the lighthouse beam, burn back the sea creatures and last fifteen nights.</p>
         <span class="soon">Coming soon to Google Play</span></div>
+      </div>
     </section>
     <section class="game">
-      <img src="images/armydash.png" alt="Army Dash icon" width="96" height="96">
+      <img class="banner" src="images/armydash-banner.jpg" alt="" width="1600" height="781" loading="lazy">
+      <div class="info">
+      <img class="icon" src="images/armydash.png" alt="Army Dash icon" width="96" height="96">
       <div><h2>Army Dash</h2><div class="sub">Squad runner</div>
         <p>Lead your toy squad through gates and traps, grow it, and beat the army and the boss at the end of 200 levels.</p>
         <span class="soon">Coming soon to Google Play</span></div>
+      </div>
     </section>
   </div>
 </main>
