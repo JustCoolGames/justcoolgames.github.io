@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy</title>
+<!--
+  Privacy policy for the phone apps (Magpie Peaks, Boom Bloom, Tidewarden, Army Dash), part of the studio website
+  (this site/ folder), served at https://justcoolgames.github.io/privacy-policy.html: the privacyUrl in each app's
+  config.
+  If you turn on Firebase or set analyticsUrl in apps/<game>.config.json, add that game to the "Play data" section
+  (the versions below it have the wording), and change the date. See docs/compliance.md. tools/check-release.js checks
+  that every game is named wherever its config turns a feature on. Now: Firebase play data, Play Games leaderboards
+  and saved games in Magpie Peaks, Tidewarden and Army Dash; Play Games achievements in Magpie Peaks; Boom Bloom sends
+  nothing. The play-data events: runtime.js and each game's track() calls, Army Dash's playEvent().
+-->
 <style>
   :root { --bg: #FBF8F2; --ink: #1D1B26; --muted: #5E5A6B; --line: #E4DED2; --link: #2F6FB3; }
   @media (prefers-color-scheme: dark) { :root { --bg: #1B1A2B; --ink: #F2EEE6; --muted: #B6B0C6; --line: #34314A; --link: #8DB8F0; } }
@@ -22,17 +32,18 @@
 <main>
   <p class="meta"><a href="index.html">← Just Cool Games</a></p>
   <h1>Privacy Policy</h1>
-  <p class="meta">For Magpie Peaks, Boom Bloom, Tidewarden and Army Dash · Effective 7 October 2026</p>
+  <p class="meta">For Magpie Peaks, Boom Bloom, Tidewarden and Army Dash · Effective 9 October 2026</p>
 
   <p>These games are made by Just Cool Games (“we”). This page explains what information the games and the
   services inside them use, and the choices you have. In short: the games don’t ask for your name or email, your
-  progress stays on your phone, and the free version shows ads from Google, which uses some information about your
-  device to do so.</p>
+  progress stays on your phone (or in your own Play Games account, if you use one), and the free version shows ads
+  from Google, which uses some information about your device to do so.</p>
 
   <h2>Your progress</h2>
-  <p>Your progress, settings and unlocks are saved on your phone only. We don’t receive them. Deleting the game
-  deletes them. Army Dash can also show your progress as a save code, which you can copy yourself to carry it to
-  another phone; we never see it.</p>
+  <p>Your progress, settings and unlocks are saved on your phone. We don’t receive them. Deleting the game
+  deletes them from your phone. In Magpie Peaks, Tidewarden and Army Dash on Android, if you are signed in to Google Play Games, a
+  copy of your progress is also kept in your Play Games account (Saved Games), so it comes back when you install the
+  game on another phone. Google keeps that copy under its own privacy policy; we don’t receive it.</p>
 
   <h2>Ads</h2>
   <p>The free version shows ads from Google AdMob between levels.
@@ -42,7 +53,7 @@
   that use its services</a>.</p>
   <ul>
     <li>In the European Economic Area, the UK and Switzerland, you are asked for consent before any ad is shown.
-    You can change your answer at any time in the game’s Settings under <strong>Privacy choices</strong>.</li>
+    You can change your answer at any time in the game’s Settings → Privacy → <strong>Choices</strong>.</li>
     <li>On iPhone, the game asks whether it may track you for ads. If you say no, ads are not personalised using
     your device’s advertising ID.</li>
     <li>You can reset or delete your advertising ID in your phone’s settings.</li>
@@ -53,20 +64,56 @@
   <p>Army Dash has no purchases. In the other games, Remove ads is bought through Google Play or the App Store. They handle the payment; we only learn whether
   you own it, so the game can turn ads off.</p>
 
-  <h2>Leaderboards</h2>
-  <p>Magpie Peaks, Tidewarden and Army Dash can post your scores to Google Play Games or Apple Game Center if you
-  are signed in to them. Your score and the player name you use there are then handled by Google or Apple under
-  their own privacy policies.</p>
+  <h2>Leaderboards and achievements</h2>
+  <p>Magpie Peaks, Tidewarden and Army Dash can post your scores, and Magpie Peaks the achievements you earn, to
+  Google Play Games or Apple Game Center if you are signed in to them. Your scores, achievements and the player name
+  you use there are then handled by Google or Apple under their own privacy policies.</p>
 
   <h2>Play data</h2>
   <p>In <strong>Magpie Peaks</strong>, <strong>Tidewarden</strong> and <strong>Army Dash</strong>, if “Share play
   data” is on in Settings, the game sends Google Analytics for Firebase information about how you play: levels
-  started and finished, scores, time played, the game’s frame rate, any game errors and, in Army Dash, the units you
-  find and upgrade, with an identifier Firebase makes for the game on your phone. In the European Economic Area, the
-  UK and Switzerland the switch is off until you turn it on; elsewhere it is on until you turn it off. It doesn’t include your name, contact details or
-  advertising ID. We use it only to balance and fix the games. Google handles it under <a
-  href="https://policies.google.com/privacy">Google’s privacy policy</a>. Turning the switch off stops it.</p>
+  started and finished, scores, time played, the game’s frame rate, any game errors, when an ad break plays, whether
+  you buy Remove ads, when the game asks you for a rating, and what you pick up and spend in a game (in Magpie Peaks
+  the trinkets you buy and sell, in Tidewarden the upgrades you choose and the pearls you spend, in Army Dash the units
+  you find and upgrade), with an identifier Firebase makes for the game on your phone. Where privacy law asks for
+  consent first (the European Economic Area, the UK and Switzerland, or wherever Google’s consent check says so), the
+  switch is off until you turn it on; elsewhere it is on until you turn it off. It doesn’t
+  include your name, contact details or advertising ID. We use it only to balance and fix the games. Google handles
+  it under <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. Turning the switch off stops
+  it.</p>
   <p>Boom Bloom doesn’t send us any information about how you play.</p>
+  <!-- If "firebase" is on in the app's config, use this section instead:
+  <h2>Play data</h2>
+  <p>If “Share play data” is on in Settings, the game sends Google Analytics for Firebase information about how you
+  play: levels started and finished, scores, time played, the game’s frame rate and any game errors, with an
+  identifier Firebase makes for this game on your phone. In the European Economic Area, the UK and Switzerland, the
+  switch is off until you turn it on; elsewhere it is on until you turn it off. It doesn’t include your name,
+  contact details or advertising ID. We use it only to balance and fix the games. Google handles it under
+  <a href="https://policies.google.com/privacy">Google’s privacy policy</a>. Turning the switch off stops it.</p>
+  -->
+  <!-- If analyticsUrl is set, use this section instead:
+  <h2>Play data</h2>
+  <p>If “Share play data” is on in Settings (it is on unless you turn it off), the game sends us anonymous
+  information about play: levels started and finished, scores, time played, and the game’s frame rate, with a
+  random ID made on your phone and your screen size. It doesn’t include your name, contact details or advertising
+  ID. We use it only to balance and fix the games, and we delete it after [RETENTION, e.g. 12 months]. Turning the
+  switch off stops it.</p>
+  -->
+
+  <h2>How long it is kept</h2>
+  <ul>
+  <li>Your progress stays on your phone until you delete the game, or use <strong>Reset progress</strong> in Settings.
+  The Play Games copy stays in your Play Games account until you delete it there (in the Google Play Games app, or in
+  your Google account’s settings).</li>
+  <li>Google Analytics keeps play data for 2 months, then deletes it. Reports made from it (counts, with no
+  identifier) stay with us. Turning Share play data off stops it at once; deleting the game removes the identifier
+  from your phone. To have the play data from your phone deleted sooner, write to us.</li>
+  <li>Google keeps ad and purchase information as its privacy policy says.</li>
+  </ul>
+
+  <h2>Keeping it safe</h2>
+  <p>Everything the games send goes over encrypted connections (HTTPS) to Google’s services. We don’t run servers of
+  our own that store it. Only we can see the play data, in Google’s Firebase console.</p>
 
   <h2>Where it is handled</h2>
   <p>Google (ads, Google Play, Google Play Games, Google Analytics for Firebase) and Apple (the App Store, Game
@@ -78,8 +125,8 @@
   <p>Depending on where you live (for example in the European Economic Area, the UK or some US states), you may have
   the right to see, correct or delete information about you, to object to its use or withdraw your consent, and to
   complain to your data protection authority. Because we don’t receive your progress or any account details, most
-  requests are answered by the choices above: change your ad choices under <strong>Privacy choices</strong> in
-  Settings, reset or delete your advertising ID in your phone’s settings, and manage what Google or Apple hold in your
+  requests are answered by the choices above: change your ad choices in Settings → Privacy → <strong>Choices</strong>,
+  reset or delete your advertising ID in your phone’s settings, and manage what Google or Apple hold in your
   Google account or Apple ID. For anything else, write to us at the address below.</p>
 
   <h2>Children</h2>

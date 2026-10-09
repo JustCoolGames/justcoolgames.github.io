@@ -1,1 +1,3 @@
+# app-ads.txt for Just Cool Games: Google AdMob may sell the ads in our apps.
+# Served at https://justcoolgames.github.io/app-ads.txt (see docs/compliance.md, "Your website").
 google.com, pub-4627344921893387, DIRECT, f08c47fec0942fa0
